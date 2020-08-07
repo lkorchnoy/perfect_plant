@@ -46,6 +46,6 @@ class PickThePerfectPlantsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pick_the_perfect_plant_params
-      params.require(:pick_the_perfect_plant).permit(:question_number, :question)
+      params.require(:pick_the_perfect_plant).permit(:question_number, :question, :user_id)
     end
 end

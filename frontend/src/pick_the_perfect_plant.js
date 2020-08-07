@@ -1,5 +1,5 @@
 class PickThePerfectPlant{
-    constructor(id, question_number, question) {
+    constructor(question_number, question) {
         this.question_number = question_number;
         this.question = question;
     }
@@ -20,9 +20,9 @@ class PickThePerfectPlant{
 
     getImage() {
 
-var options = document.getElementsByName("question");
+const options = document.getElementsByName("question");
 
-for (var i = 0; i < options.length; i++) {
+for (const i = 0; i < options.length; i++) {
     if (options[i].checked) {
         //return img 
         // do whatever you want with the checked radio
@@ -31,6 +31,7 @@ for (var i = 0; i < options.length; i++) {
     }
     if(q === "1"){
         document.getElementById("question1").innerHTML = "img";
+        //document.getElementsByTagName('value="1"').innerHTML = <button onclick="show_image url('images/air_plant.jpg')"> Display Image</button>
     if(q === "2"){
         document.getElementById("question2").innerHTML = "img";
     if(q === "3"){
@@ -47,19 +48,18 @@ for (var i = 0; i < options.length; i++) {
     alert('Please select one answer');
 }
     }
-
+}
  //if(typeof q == "undefined"){
         //document.getElementsByTagName("value1").innerHTML = " select the operation you want to perform";
         //return false;
 //}
 
-    function getImage() {
-        var checked_question = document.querySelector('input[name = "question"]:checked');
-    if(checked_question != null) {
-        alert(checked_question.value);
-    } else {
-        alert('Nothing checked');
-    }
-    }
-
+    
+function show_image(images, width, height, alt) {
+    var img = document.createElement("img");
+    img.src = images;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+    document.body.appendChild(img);
 }
