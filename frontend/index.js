@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   bestPlantForm();
   fetchPlants();
+  createForm();
 });
 
 const BASE_URL = "http://127.0.0.1:3000";
-const images=["aloe_vera.jpg", "bamboo_palm.jpg"]
+const images=["aloe_vera.jpg", "bamboo_palm.jpg", "birds_nest_fern.jpg", "chinese_evergreen.jpg", "cover.jpg", "dracaena.jpg", "english_ivy.jpg", "golden_pothos.jpg", "jade_plant.jpg", "majesty_palm.jpg", "marble_queen.jpg", "peace_lily_plant.jpg", "philodendron.jpg", "rubber_tree_plant.jpg", "ruffle_fern1.jpg", "snake_plant.jpg", "spider_plant.jpg", "succulent.jpg", "zz_plant.jpg"]
 
 function fetchPlants() {
   fetch(`${BASE_URL}/pick_the_perfect_plants`)
@@ -108,70 +109,32 @@ function bestPlantForm() {
         </form>
         `;
 
-  //plantsForm.addEventListener("submit", plantFormSubmission)
-  //plantsForm.addEventListener("click", plantFormSubmission)
-  let images = document.getElementById("images.jpg");
+  
+  //let images = document.getElementById("images.jpg");
   let buttons = document.querySelectorAll("[name=question]");
   let submitButton=document.getElementById("submit")
   submitButton.addEventListener("click", plantFormSubmission);
   console.log(buttons.length);
   for (let button of Array.from(buttons)) {
     button.addEventListener("click", plantFormSubmission)
-    
-
-    //images.click();
-
-    //images.addEventListener("change", function() {
-    //if(images.value) {
-
-    // }
-    //})
-  }
+    }
 }
 
-function getImage() {
-  let checked_question = document.querySelector('input[value = "1"]:checked');
-  if (checked_question === "1") {
-    return url("images/bamboo_palm.jpg");
-  } else {
-    alert("Please make your selection");
-  }
-}
+
 
 function plantFormSubmission() {
-    console.log("Hello");
-  
+    //console.log("Hello");
   if (event.target.matches("button[type=submit]")) {
      event.preventDefault();
       let imageDiv=document.getElementById("image") 
       imageDiv.innerHTML=`<img src="images/${images[Math.floor(Math.random() * images.length)]}"/>`
     
-    //let question_number = document.querySelectorAll("input").value;
-
-
-
-    //let plant = {
-      //question_number: question_number,
-    //};
-
-    //fetch(`${BASE_URL}/pick_the_perfect_plant`, {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(plant),
-    // })
-    //   .then((resp) => resp.json())
-    //   .then((plant) => {
-    //     let p = new PickThePerfectPlant(
-    //       pick_the_perfect_plant.question_number,
-    //       pick_the_perfect_plant.question
-    //     );
-    //     p.renderPickThePerfectPlant();
-    //   });
+    
   }
 }
+
+
+
 
 function createForm() {
   let usersForm = document.getElementById("users-form");

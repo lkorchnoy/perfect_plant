@@ -101,7 +101,7 @@
     //      //can we attach a submit event listener to a div
     //      //plantsForm.addEventListener("click", selectOnlyThis)
     //  }
-    
+
 
      //let buttons = document.getElementsByClassName("delete-bttn")
         //console.log(buttons)
@@ -111,3 +111,81 @@
            // }
        // }
 
+
+       //let question_number = document.querySelectorAll("input").value;
+
+
+
+    //let plant = {
+      //question_number: question_number,
+    //};
+
+    //fetch(`${BASE_URL}/pick_the_perfect_plant`, {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(plant),
+    // })
+    //   .then((resp) => resp.json())
+    //   .then((plant) => {
+    //     let p = new PickThePerfectPlant(
+    //       pick_the_perfect_plant.question_number,
+    //       pick_the_perfect_plant.question
+    //     );
+    //     p.renderPickThePerfectPlant();
+    //   });
+
+
+  <!-- function getImage() {
+  let checked_question = document.querySelector('input[value = "1"]:checked');
+  if (checked_question === "1") {
+    return url("images/bamboo_palm.jpg");
+  } else {
+    alert("Please make your selection");
+  }
+}  -->
+
+getImage() {
+
+const options = document.getElementsByName("question");
+
+for (const i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+        //return img 
+        // do whatever you want with the checked radio
+        var q = options[i].value;
+        }
+    }
+    if(q === "1"){
+        document.getElementById("question1").innerHTML = "img";
+        //document.getElementsByTagName('value="1"').innerHTML = <button onclick="show_image url('images/air_plant.jpg')"> Display Image</button>
+    if(q === "2"){
+        document.getElementById("question2").innerHTML = "img";
+    if(q === "3"){
+        document.getElementById("question3").innerHTML = "img";
+    if(q === "4"){
+        document.getElementById("question4").innerHTML = "img";
+    if(q === "5"){
+        document.getElementById("question5").innerHTML = "img";
+    }
+}
+    }
+}
+} else {
+    alert('Please select one answer');
+}
+    }
+}
+ //if(typeof q == "undefined"){
+        //document.getElementsByTagName("value1").innerHTML = " select the operation you want to perform";
+        //return false;
+//}
+
+    
+#image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
