@@ -5,7 +5,7 @@ class PickThePerfectPlantsController < ApplicationController
   def index
     @pick_the_perfect_plants = PickThePerfectPlant.all
 
-    render json: @pick_the_perfect_plants
+    render json: @pick_the_perfect_plants, include: [:users]
   end
 
   # GET /pick_the_perfect_plants/1

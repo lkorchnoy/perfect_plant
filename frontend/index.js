@@ -35,7 +35,7 @@ function fetchUsers() {
 }
 
 function bestPlantForm() {
-  // for (var i = 1; i <= 5; i++)
+   //for (var i = 0; i <= 5; i++) 
   let plantsForm = document.getElementById("plants-form");
 
   plantsForm.innerHTML += `
@@ -110,16 +110,15 @@ function bestPlantForm() {
         `;
 
   
-  //let images = document.getElementById("images.jpg");
+  
   let buttons = document.querySelectorAll("[name=question]");
   let submitButton=document.getElementById("submit")
   submitButton.addEventListener("click", plantFormSubmission);
-  console.log(buttons.length);
+  //console.log(buttons.length);
   for (let button of Array.from(buttons)) {
     button.addEventListener("click", plantFormSubmission)
     }
 }
-
 
 
 function plantFormSubmission() {
@@ -129,13 +128,10 @@ function plantFormSubmission() {
       let imageDiv=document.getElementById("image") 
       imageDiv.innerHTML=`<img src="images/${images[Math.floor(Math.random() * images.length)]}"/>`
     
-    
   }
-}
+  }
 
-
-
-
+  
 function createForm() {
   let usersForm = document.getElementById("users-form");
 
