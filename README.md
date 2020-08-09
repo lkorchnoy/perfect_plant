@@ -19,7 +19,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/lkorch
 
 License
 
-The repository is available as open source under the terms of the MIT License (https://github.com/lkorchnoy/ordinary-startups/blob/master/LICENSE)
+The repository is available as open source under the terms of the MIT License (https://github.com/lkorchnoy/perfect_plant/blob/master/LICENSE)
 
 Code of Conduct
 
