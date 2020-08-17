@@ -31,11 +31,12 @@ function fetchPlants() {
   fetch(`${BASE_URL}/pick_the_perfect_plants`)
     .then((resp) => resp.json())
     .then((pick_the_perfect_plants) => {
-      //for (const pick_the_perfect_plant of pick_the_perfect_plants) {
-        
+        debugger;
+    for(pick_the_perfect_plant in pick_the_perfect_plants) {
+        console.log(pick_the_perfect_plant);
         let p = new PickThePerfectPlant(pick_the_perfect_plant.question_number, pick_the_perfect_plant.question);
         p.renderPickThePerfectPlant();
-   //}
+   }
     });
 }
 
@@ -62,7 +63,7 @@ function bestPlantForm() {
         <h1>The Perfect Plant</h1>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question" id="question1" value="1" input type="text" />   1. I like to plan.                  </br>
+        <input type="radio" class="form-check-input" name="question" id="question1" value="1" />   1. I like to plan.                  </br>
         <input type="radio" class="form-check-input" name="question" id="question2" value="2" />  2. I am a free spirit, no planning for me. </br>
         <input type="radio" class="form-check-input" name="question" id="question3" value="3" />  3. I am a realist.                         </br>
         <input type="radio" class="form-check-input" name="question" id="question4" value="4" />  4. I am a dreamer.                         </br>
@@ -139,44 +140,44 @@ function plantFormSubmission() {
   if (event.target.matches("button[type=submit]")) {
       
     event.preventDefault();
-    //debugger;
+    
     let imageDiv = document.getElementById("image");
     imageDiv.innerHTML = `<img src="images/${
       images[Math.floor(Math.random() * images.length)]
     }"/>`;
     
-    const plantInput = plantsForm.querySelector("#value")
+    //const plantInput = plantsForm.querySelector("#value")
+    debugger;
     Array.from(event.target.parentElement.children).map(element => {
-        const inputValue = event.target.parentElement.children.value 
-        plantInput.value
-        //Array.from(element.lastElementChild.firstElementChild.children).map(input => {
-            //plantsDiv = buttons.value
+       // const inputValue = event.target.parentElement.children.value 
+        
+        Array.from(element.lastElementChild.firstElementChild.children).map(input => {
+            
                  
                  
 
                  fetch(`${BASE_URL}/pick_the_perfect_plants`, {
-        
+                
                     method: "POST",
                     headers: {
+                       "Accept": "application/json",
+                      "Content-Type": "application/json"
                       
-                      "Content-Type": "application/json",
-                      Accept: "application/json"
                     },
-                    body: JSON.stringify({
-                        pick_the_perfect_plant
-                    })
+                    body: JSON.stringify(pick_the_perfect_plant)
+
                   })
                     .then(function(res){
                         return res.json()
                     })
-                    .then(function(pick_the_perfect_plant) {
-                     const plantsContainer = document.querySelector("#plants-container")
+                    .then(function(pick_the_perfect_plants) {
+                     //const plantsContainer = document.querySelector("#plants-container")
                      
-                     pick_the_perfect_plants.data.forEach(function(pick_the_perfect_plant) {
-                         const newPickThePerfectPlantEl = document.createElement('p')
-                         newPickThePerfectPlantEl.innerText = pick_the_perfect_plant.attributes.question
-                         plantsContainer.appendChild(newPickThePerfectPlantEl)
-                     })
+                     //pick_the_perfect_plants.data.forEach(function(pick_the_perfect_plant) {
+                       //  const newPickThePerfectPlantEl = document.createElement('p')
+                        // newPickThePerfectPlantEl.innerText = pick_the_perfect_plant.attributes.question
+                       //  plantsContainer.appendChild(newPickThePerfectPlantEl)
+                     //})
                     
                      
 
@@ -187,7 +188,7 @@ function plantFormSubmission() {
                    
         })
 
-  //})
+  })
   }
 }
 

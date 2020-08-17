@@ -15,12 +15,13 @@ class PickThePerfectPlantsController < ApplicationController
 
   # POST /pick_the_perfect_plants
   def create
+    
     @pick_the_perfect_plant = PickThePerfectPlant.new(pick_the_perfect_plant_params)
 
     if @pick_the_perfect_plant.save
-      serialized_data = PickThePerfectPlant.new(@pick_the_perfect_plant).serialized_json
-      render json: serialized_data
-      #render json: @pick_the_perfect_plant, status: :created, location: @pick_the_perfect_plant
+      #serialized_data = PickThePerfectPlant.new(@pick_the_perfect_plant).serialized_json
+      #render json: serialized_data
+      render json: @pick_the_perfect_plant, status: :created, location: @pick_the_perfect_plant
     else
       render json: @pick_the_perfect_plant.errors, status: :unprocessable_entity
     end
