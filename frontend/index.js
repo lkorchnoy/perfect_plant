@@ -5,20 +5,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const BASE_URL = "http://127.0.0.1:3000";
-const images=["aloe_vera.jpg", "bamboo_palm.jpg", "birds_nest_fern.jpg", "chinese_evergreen.jpg", "cover.jpg", "dracaena.jpg", "english_ivy.jpg", "golden_pothos.jpg", "jade_plant.jpg", "majesty_palm.jpg", "marble_queen.jpg", "peace_lily_plant.jpg", "philodendron.jpg", "rubber_tree_plant.jpg", "ruffle_fern1.jpg", "snake_plant.jpg", "spider_plant.jpg", "succulent.jpg", "zz_plant.jpg"]
+const images = [
+  "aloe_vera.jpg",
+  "bamboo_palm.jpg",
+  "birds_nest_fern.jpg",
+  "chinese_evergreen.jpg",
+  "cover.jpg",
+  "dracaena.jpg",
+  "english_ivy.jpg",
+  "golden_pothos.jpg",
+  "jade_plant.jpg",
+  "majesty_palm.jpg",
+  "marble_queen.jpg",
+  "peace_lily_plant.jpg",
+  "philodendron.jpg",
+  "rubber_tree_plant.jpg",
+  "ruffle_fern1.jpg",
+  "snake_plant.jpg",
+  "spider_plant.jpg",
+  "succulent.jpg",
+  "zz_plant.jpg",
+];
 
 function fetchPlants() {
   fetch(`${BASE_URL}/pick_the_perfect_plants`)
     .then((resp) => resp.json())
-    .then((plants) => {
-      for (const plant of plants) {
-        console.log(plant)
-        let p = new PickThePerfectPlant(
-          plant.question_number,
-          plant.question
-        );
+    .then((pick_the_perfect_plants) => {
+      //for (const pick_the_perfect_plant of pick_the_perfect_plants) {
+        
+        let p = new PickThePerfectPlant(pick_the_perfect_plant.question_number, pick_the_perfect_plant.question);
         p.renderPickThePerfectPlant();
-      }
+   //}
     });
 }
 
@@ -35,7 +52,7 @@ function fetchUsers() {
 }
 
 function bestPlantForm() {
-   //for (var i = 0; i <= 5; i++) 
+  //for (var i = 0; i <= 5; i++)
   let plantsForm = document.getElementById("plants-form");
 
   plantsForm.innerHTML += `
@@ -45,7 +62,7 @@ function bestPlantForm() {
         <h1>The Perfect Plant</h1>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question" id="question1" value="1" />  1. I like to plan.                         </br>
+        <input type="radio" class="form-check-input" name="question" id="question1" value="1" input type="text" />   1. I like to plan.                  </br>
         <input type="radio" class="form-check-input" name="question" id="question2" value="2" />  2. I am a free spirit, no planning for me. </br>
         <input type="radio" class="form-check-input" name="question" id="question3" value="3" />  3. I am a realist.                         </br>
         <input type="radio" class="form-check-input" name="question" id="question4" value="4" />  4. I am a dreamer.                         </br>
@@ -108,30 +125,72 @@ function bestPlantForm() {
 
         </form>
         `;
-
-  
   
   let buttons = document.querySelectorAll("[name=question]");
-  let submitButton=document.getElementById("submit")
+  let submitButton = document.getElementById("submit");
   submitButton.addEventListener("click", plantFormSubmission);
   //console.log(buttons.length);
   for (let button of Array.from(buttons)) {
-    button.addEventListener("click", plantFormSubmission)
-    }
+    button.addEventListener("click", plantFormSubmission);
+  }
 }
 
-
 function plantFormSubmission() {
-    //console.log("Hello");
   if (event.target.matches("button[type=submit]")) {
-     event.preventDefault();
-      let imageDiv=document.getElementById("image") 
-      imageDiv.innerHTML=`<img src="images/${images[Math.floor(Math.random() * images.length)]}"/>`
+      
+    event.preventDefault();
+    //debugger;
+    let imageDiv = document.getElementById("image");
+    imageDiv.innerHTML = `<img src="images/${
+      images[Math.floor(Math.random() * images.length)]
+    }"/>`;
     
-  }
-  }
+    const plantInput = plantsForm.querySelector("#value")
+    Array.from(event.target.parentElement.children).map(element => {
+        const inputValue = event.target.parentElement.children.value 
+        plantInput.value
+        //Array.from(element.lastElementChild.firstElementChild.children).map(input => {
+            //plantsDiv = buttons.value
+                 
+                 
 
-  
+                 fetch(`${BASE_URL}/pick_the_perfect_plants`, {
+        
+                    method: "POST",
+                    headers: {
+                      
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    },
+                    body: JSON.stringify({
+                        pick_the_perfect_plant
+                    })
+                  })
+                    .then(function(res){
+                        return res.json()
+                    })
+                    .then(function(pick_the_perfect_plant) {
+                     const plantsContainer = document.querySelector("#plants-container")
+                     
+                     pick_the_perfect_plants.data.forEach(function(pick_the_perfect_plant) {
+                         const newPickThePerfectPlantEl = document.createElement('p')
+                         newPickThePerfectPlantEl.innerText = pick_the_perfect_plant.attributes.question
+                         plantsContainer.appendChild(newPickThePerfectPlantEl)
+                     })
+                    
+                     
+
+                      //let p = new PickThePerfectPlant(plant.id, plant.question_number, plant.question, user_id);
+                      //p.renderPickThePerfectPlant();
+                         
+                     })
+                   
+        })
+
+  //})
+  }
+}
+
 function createForm() {
   let usersForm = document.getElementById("users-form");
 
