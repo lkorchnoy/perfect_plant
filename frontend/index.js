@@ -79,15 +79,15 @@ function bestPlantForm() {
         <form id="myForm">
         
         <h1>The Perfect Plant</h1>
-        <p>Please select from the following options:</p>
+        <p>Select your favorite answers:</p>
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question1" id="question1" value="1" />   1. I like to plan.                  </br>
-        <input type="radio" class="form-check-input" name="question1" id="question2" value="2" />  2. I am a free spirit, no planning for me. </br>
-        <input type="radio" class="form-check-input" name="question1" id="question3" value="3" />  3. I am a realist.                         </br>
-        <input type="radio" class="form-check-input" name="question1" id="question4" value="4" />  4. I am a dreamer.                         </br>
-        <input type="radio" class="form-check-input" name="question1" id="question5" value="5" />  5. I have furry friends.                   </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="1. I like to plan.">                         1. I like to plan.                          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="2. I am a free spirit, no planning for me."> 2. I am a free spirit, no planning for me.  </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="3. I am a realist.">                         3. I am a realist.                          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="4. I am a dreamer.">                         4. I am a dreamer.                          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="5. I have furry friends.">                   5. I have furry friends.                    </br>
         </label>
         </div>
         </div>
@@ -95,11 +95,11 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question2" id="question6" value="6" />  1. I set the trend.                        </br>
-        <input type="radio" class="form-check-input" name="question2" id="question7" value="7" />  2. I follow the trend.                    </br>
-        <input type="radio" class="form-check-input" name="question2" id="question8" value="8" />  3. I enjoy the spotlight.                  </br>
-        <input type="radio" class="form-check-input" name="question2" id="question9" value="9" />  4. I"ll peacefully hang back here.         </br>
-        <input type="radio" class="form-check-input" name="question2" id="question10" value="10" />  5. I'm an early bird.                      </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="1. I set the trend.">                      1. I set the trend.                         </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="2. I follow the trend.">                   2. I follow the trend.                      </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="3. I enjoy the spotlight.">                3. I enjoy the spotlight.                   </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="4. I"ll peacefully hang back here.">       4. I"ll peacefully hang back here.          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="5. I'm an early bird.">                    5. I'm an early bird.                       </br>
         </label>
         </div>
         </div>
@@ -107,11 +107,11 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question3" id="question11" value="11" />  1. Tropical getaway is my dream vacation.  </br>
-        <input type="radio" class="form-check-input" name="question3" id="question12" value="12" />  2. I like watering my plants.              </br>
-        <input type="radio" class="form-check-input" name="question3" id="question13" value="13" />  3. I will water my plants only if I remember. </br>
-        <input type="radio" class="form-check-input" name="question3" id="question14" value="14" />  4. I enjoy swimming.                        </br>
-        <input type="radio" class="form-check-input" name="question3" id="question15" value="15" />  5. I enjoy sunbathing.                      </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="1. Tropical getaway is my dream vacation.">    1. Tropical getaway is my dream vacation.     </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="2. I like watering my plants.">                2. I like watering my plants.                 </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="3. I will water my plants only if I remember.">3. I will water my plants only if I remember. </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)"value="4. I enjoy swimming.">                          4. I enjoy swimming.                          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="5. I enjoy sunbathing.">                       5. I enjoy sunbathing.                        </br>
         </label>
         </div>  
         </div>  
@@ -119,11 +119,11 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question4" id="question16" value="16" />  1. My grand entrance is gracefully walking down a spiral staircase.  </br>
-        <input type="radio" class="form-check-input" name="question4" id="question17" value="17" />  2. My grand entance is skydiving onto a stage.                       </br>
-        <input type="radio" class="form-check-input" name="question4" id="question18" value="18" />  3. My room is minimalistic.                                          </br>
-        <input type="radio" class="form-check-input" name="question4" id="question19" value="19" />  4. My room is bold.                                                  </br>
-        <input type="radio" class="form-check-input" name="question4" id="question20" value="20" />  5. I would read to my plants.                                        </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="1. My grand entrance is gracefully walking down a spiral staircase.">1. My grand entrance is gracefully walking down a spiral staircase.  </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="2. My grand entance is skydiving onto a stage.">                     2. My grand entance is skydiving onto a stage.                       </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="3. My room is minimalistic.">                                        3. My room is minimalistic.                                          </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="4. My room is bold.">                                                4. My room is bold.                                                  </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="5. I would read to my plants.">                                      5. I would read to my plants.                                        </br>
         </label>
         </div>  
         </div>  
@@ -131,16 +131,17 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question5" id="question21" value="21" />  1. I enjoy a good movie.                    </br>
-        <input type="radio" class="form-check-input" name="question5" id="question22" value="22" />  2. I don't have furry friends.              </br>
-        <input type="radio" class="form-check-input" name="question5" id="question23" value="23" />  3. I prefer to read in the dark room.       </br>
-        <input type="radio" class="form-check-input" name="question5" id="question24" value="24" />  4. I prefer to read in the bright room.     </br>
-        <input type="radio" class="form-check-input" name="question5" id="question25" value="25" />  5. I am mostly out and about.               </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="1. I enjoy a good movie.">                    1. I enjoy a good movie.                  </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="2. I don't have furry friends.">              2. I don't have furry friends.            </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="3. I prefer to read in the dark room.">       3. I prefer to read in the dark room.     </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="4. I prefer to read in the bright room.">     4. I prefer to read in the bright room.   </br>
+        <input type="radio" class="form-check-input" name="question" onclick="myFunction(this.value)" value="5. I am mostly out and about.">               5. I am mostly out and about.             </br>
         </label>
         </div> 
         </div>  
            <br>
         
+        Your favorite answers: <span><input type="text" id="result" contenteditable></span>
         <button type="submit" id="submit">Submit</button>
         <button type="button" id="click" name="history">History Button</button>
         
@@ -154,7 +155,10 @@ function bestPlantForm() {
     historyButton.addEventListener("click", historyFormSubmission);
     debugger;
 }
-  
+
+function myFunction(question) {
+    document.getElementById("result").value = question;
+}
 function plantFormSubmission() {
   if (event.target.matches("button[type=submit]")) {
       
