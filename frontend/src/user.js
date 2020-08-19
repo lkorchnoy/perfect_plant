@@ -15,7 +15,7 @@ class User {
         <h3>Name: ${this.name}</h3>
         <li>Username: ${this.username} - Email: ${this.email} </li>
         </ul>
-        <button class="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete User</button>
+        <button class="delete-bttn" id="delete-bttn" data-id=${this.id} onclick="deleteUser()">Delete User</button>
 
 
         `
