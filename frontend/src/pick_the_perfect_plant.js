@@ -8,13 +8,13 @@ class PickThePerfectPlant{
      renderPickThePerfectPlant() {
          let plantsDiv = document.getElementById("plants-container")
 
-        //  plantsDiv.innerHTML +=
-        //  `
-        //  <ul>
-        //  <li>${this.question_number} - Question: ${this.question} </li>
-        //  </ul>
+         plantsDiv.innerHTML +=
+         `
+         <ul>
+         <li>Question Number: ${this.question_number} | Question: ${this.question} | Name: ${this.user_id}</li>
+         </ul>
         
-        //  `
+         `
      }
 
 }
