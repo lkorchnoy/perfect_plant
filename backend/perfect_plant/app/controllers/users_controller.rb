@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-    serialized_data = UserSerializer.new(@users).serialized_json 
-    render json: serialized_data
+    #serialized_data = UserSerializer.new(@users).serialized_json 
+    #render json: serialized_data
+    render json: @users, include: [:pick_the_perfect_plants]
   end
 
   # GET /users/1

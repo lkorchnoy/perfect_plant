@@ -68,11 +68,11 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question1" id="1" onclick="myFunction(this.value)" value="1. I like to plan.">                         1. I like to plan.                          </br>
-        <input type="radio" class="form-check-input" name="question1" id="2" onclick="myFunction(this.value)" value="2. I am a free spirit, no planning for me."> 2. I am a free spirit, no planning for me.  </br>
-        <input type="radio" class="form-check-input" name="question1" id="3" onclick="myFunction(this.value)" value="3. I am a realist.">                         3. I am a realist.                          </br>
-        <input type="radio" class="form-check-input" name="question1" id="4" onclick="myFunction(this.value)" value="4. I am a dreamer.">                         4. I am a dreamer.                          </br>
-        <input type="radio" class="form-check-input" name="question1" id="5" onclick="myFunction(this.value)" value="5. I have furry friends.">                   5. I have furry friends.                    </br>
+        <input type="radio" class="form-check-input" name="question" id="1" onclick="myFunction(this.value)" value="1. I like to plan.">                         1. I like to plan.                          </br>
+        <input type="radio" class="form-check-input" name="question" id="2" onclick="myFunction(this.value)" value="2. I am a free spirit, no planning for me."> 2. I am a free spirit, no planning for me.  </br>
+        <input type="radio" class="form-check-input" name="question" id="3" onclick="myFunction(this.value)" value="3. I am a realist.">                         3. I am a realist.                          </br>
+        <input type="radio" class="form-check-input" name="question" id="4" onclick="myFunction(this.value)" value="4. I am a dreamer.">                         4. I am a dreamer.                          </br>
+        <input type="radio" class="form-check-input" name="question" id="5" onclick="myFunction(this.value)" value="5. I have furry friends.">                   5. I have furry friends.                    </br>
         </label>
         </div>
         </div>
@@ -80,11 +80,11 @@ function bestPlantForm() {
         <div>
         <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="question2" id="6" onclick="myFunction(this.value)" value="1. I set the trend.">                      1. I set the trend.                         </br>
-        <input type="radio" class="form-check-input" name="question2" id="7" onclick="myFunction(this.value)" value="2. I follow the trend.">                   2. I follow the trend.                      </br>
-        <input type="radio" class="form-check-input" name="question2" id="8" onclick="myFunction(this.value)" value="3. I enjoy the spotlight.">                3. I enjoy the spotlight.                   </br>
-        <input type="radio" class="form-check-input" name="question2" id="9" onclick="myFunction(this.value)" value="4. I"ll peacefully hang back here.">       4. I"ll peacefully hang back here.          </br>
-        <input type="radio" class="form-check-input" name="question2" id="10" onclick="myFunction(this.value)" value="5. I'm an early bird.">                    5. I'm an early bird.                       </br>
+        <input type="radio" class="form-check-input" name="question" id="6" onclick="myFunction(this.value)" value="1. I set the trend.">                      1. I set the trend.                         </br>
+        <input type="radio" class="form-check-input" name="question" id="7" onclick="myFunction(this.value)" value="2. I follow the trend.">                   2. I follow the trend.                      </br>
+        <input type="radio" class="form-check-input" name="question" id="8" onclick="myFunction(this.value)" value="3. I enjoy the spotlight.">                3. I enjoy the spotlight.                   </br>
+        <input type="radio" class="form-check-input" name="question" id="9" onclick="myFunction(this.value)" value="4. I"ll peacefully hang back here.">       4. I"ll peacefully hang back here.          </br>
+        <input type="radio" class="form-check-input" name="question" id="10" onclick="myFunction(this.value)" value="5. I'm an early bird.">                    5. I'm an early bird.                       </br>
         </label>
         </div>
         </div>
