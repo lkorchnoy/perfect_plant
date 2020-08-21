@@ -81,4 +81,13 @@
 
 //<li>${pick_the_perfect_plant.question_number} - Question: ${pick_the_perfect_plant.question} </li>
                 //</ul>`
+
+
+  const myQuestions = []
+
+      for(const myQuestion of myQuestions) {
+      if (myQuestion.user_id == currentUserId) {
+      myQuestions.push(p)
+      }
+  }              
                         

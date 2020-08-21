@@ -159,7 +159,7 @@ function plantFormSubmission() {
     
     
     let currentUser = document.getElementById("delete-bttn");
-    let currentUserId = currentUser.getAttribute("data-id");
+    let currentUserId = currentUser.getAttribute("data-id").value;
     let question_number = currentUserId
     let question = document.getElementById("result").value 
     
@@ -191,27 +191,21 @@ function plantFormSubmission() {
             let p = new PickThePerfectPlant(pick_the_perfect_plant.question_number, pick_the_perfect_plant.question, pick_the_perfect_plant.user_id);
             p.renderPickThePerfectPlant();
                     
-                    //   const inputValue = []
-                    //   for(const pick_the_perfect_plant of pick_the_perfect_plants) {
-                    //      if (pick_the_perfect_plant.user_id == currentUserId) {
-                    //          inputValue.push(pick_the_perfect_plant)
-                    //     }
-                    //  }
-                         
-                     })
+  })
                     
-                    
-                      
-                    
-                }
+  }
 }
 
  function historyFormSubmission() {
-     //const myQuestions = []
-     //myQuestions.push(p)
-    
-    
- }
+     let qDiv = document.getElementById("history-container")
+
+     qDiv.innerHTML += 
+     `
+     <li>User: ${this.id} | Question: ${this.question}</li>
+     
+     
+     `
+  }
 
 
 function createForm() {
