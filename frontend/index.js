@@ -207,21 +207,18 @@ function plantFormSubmission() {
      let user = document.getElementById("delete-bttn");
      let userId = user.dataset.id;
      let questionAnswer = document.getElementById("result").value 
-     
+
     fetch(`${BASE_URL}/users/${userId}`) 
      
      .then(response => response.json())
      .then(response => {
-       return console.log(response)
+      qDiv.innerHTML += 
+      `
+      <li>Name: ${response.name} | Question: ${response.pick_the_perfect_plants[0].question}</li>
+      `
      })
 
   
-     qDiv.innerHTML += 
-     `
-     <li>User: ${this} | Question: ${this.question}</li>
-     
-     
-     `
   }
 
 

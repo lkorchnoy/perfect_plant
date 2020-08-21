@@ -4,7 +4,7 @@ class PickThePerfectPlant{
         this.question = question;
         this.user_id = user_id;
     }
-    debugger;
+    
      renderPickThePerfectPlant() {
          let plantsDiv = document.getElementById("plants-container")
 
