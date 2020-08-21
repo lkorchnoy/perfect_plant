@@ -207,8 +207,9 @@ function plantFormSubmission() {
      let user = document.getElementById("delete-bttn");
      let userId = user.dataset.id;
      let questionAnswer = document.getElementById("result").value 
-    
-     fetch(`${BASE_URL}/users/${userId}`) 
+     
+    fetch(`${BASE_URL}/users/${userId}`) 
+     
      .then(response => response.json())
      .then(response => {
        return console.log(response)
