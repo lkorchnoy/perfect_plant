@@ -156,10 +156,12 @@ function plantFormSubmission() {
      }"/>`
     
     
-    let question_number = document.getElementById("1");
-    let question = document.getElementById("result").value = question;
+    
+    
     let currentUser = document.getElementById("delete-bttn");
     let currentUserId = currentUser.getAttribute("data-id");
+    let question_number = currentUserId
+    let question = document.getElementById("result").value 
     
 
     //let questionNumberTwo = document.querySelector('input[name="question2"]:checked').value;
@@ -170,32 +172,33 @@ function plantFormSubmission() {
     let pick_the_perfect_plant = { 
             question_number: question_number,
             question: question,
-            user_id: currentUserId
+            //user_id: currentUserId
           };
      
 
     fetch(`${BASE_URL}/pick_the_perfect_plants`, {
-                    method: "POST",
-                    headers: {
-                      Accept: "application/json",
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(pick_the_perfect_plant),
-                  })
+            method: "POST",
+            headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+              },
+            body: JSON.stringify(pick_the_perfect_plant),
+              })
     
-                  .then(response => response.json())
-                  .then(pick_the_perfect_plant => {
-                    let p = new PickThePerfectPlant(pick_the_perfect_plant.question_number, pick_the_perfect_plant.question, pick_the_perfect_plant.user_id);
-                    p.renderPickThePerfectPlant();
+            .then(response => response.json())
+            //.then(response => console.log((response)))
+            .then(pick_the_perfect_plant => {
+            let p = new PickThePerfectPlant(pick_the_perfect_plant.question_number, pick_the_perfect_plant.question, pick_the_perfect_plant.user_id);
+            p.renderPickThePerfectPlant();
                     
                     //   const inputValue = []
-                    //   for(const element of elements) {
-                    //      if (element.user_id == currentUserId) {
-                    //          inputValue.push(element)
-                     //    }
-                     // }
+                    //   for(const pick_the_perfect_plant of pick_the_perfect_plants) {
+                    //      if (pick_the_perfect_plant.user_id == currentUserId) {
+                    //          inputValue.push(pick_the_perfect_plant)
+                    //     }
+                    //  }
                          
-                      })
+                     })
                     
                     
                       
@@ -203,12 +206,12 @@ function plantFormSubmission() {
                 }
 }
 
-function historyFormSubmission() {
-    const myQuestions = []
-    myQuestions.push(p)
+ function historyFormSubmission() {
+     //const myQuestions = []
+     //myQuestions.push(p)
     
     
-}
+ }
 
 
 function createForm() {

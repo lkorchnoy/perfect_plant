@@ -4,8 +4,9 @@ class PickThePerfectPlantsController < ApplicationController
   # GET /pick_the_perfect_plants
   def index
     @pick_the_perfect_plants = PickThePerfectPlant.all
-    serialized_data = PickThePerfectPlantSerializer.new(@pick_the_perfect_plants).serialized_json 
-    render json: serialized_data
+    render json: @pick_the_perfect_plants.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at])
+    #serialized_data = PickThePerfectPlantSerializer.new(@pick_the_perfect_plants).serialized_json 
+    #render json: serialized_data
   end
 
   # GET /pick_the_perfect_plants/1
@@ -16,14 +17,14 @@ class PickThePerfectPlantsController < ApplicationController
   # POST /pick_the_perfect_plants
   def create
     
-    @pick_the_perfect_plant = PickThePerfectPlant.new(pick_the_perfect_plant_params)
+    @pick_the_perfect_plant = PickThePerfectPlant.new(question_number: params[:question_number], question: params[:question], user_id: params[:user])
 
     if @pick_the_perfect_plant.save
       #serialized_data = PickThePerfectPlant.new(@pick_the_perfect_plant).serialized_json
       #render json: serialized_data
-      render json: @pick_the_perfect_plant, status: :created, location: @pick_the_perfect_plant
+      render json: @pick_the_perfect_plant.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at])
     else
-      render json: @pick_the_perfect_plant.errors, status: :unprocessable_entity
+      render json: ("Try again. Select your favorite answer.").to_json 
     end
   end
 
@@ -38,6 +39,7 @@ class PickThePerfectPlantsController < ApplicationController
 
   # DELETE /pick_the_perfect_plants/1
   def destroy
+    
     @pick_the_perfect_plant.destroy
   end
 
@@ -48,7 +50,7 @@ class PickThePerfectPlantsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def pick_the_perfect_plant_params
-      params.require(:pick_the_perfect_plant).permit(:question_number, :question, :user_id)
-    end
+    #def pick_the_perfect_plant_params
+     # params.require(:pick_the_perfect_plant).permit(:question_number, :question, :user_id)
+    #end
 end
