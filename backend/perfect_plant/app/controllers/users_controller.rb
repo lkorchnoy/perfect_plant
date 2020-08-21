@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, :include => [:pick_the_perfect_plants]
+    #(:include => {:user => {:only => [:name]}}
   end
 
   # POST /users

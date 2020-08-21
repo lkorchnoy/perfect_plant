@@ -17,7 +17,7 @@ class PickThePerfectPlantsController < ApplicationController
   # POST /pick_the_perfect_plants
   def create
     
-    @pick_the_perfect_plant = PickThePerfectPlant.new(question_number: params[:question_number], question: params[:question], user_id: params[:user])
+    @pick_the_perfect_plant = PickThePerfectPlant.new(question_number: params[:question_number], question: params[:question], user_id: params[:user_id])
 
     if @pick_the_perfect_plant.save
       #serialized_data = PickThePerfectPlant.new(@pick_the_perfect_plant).serialized_json

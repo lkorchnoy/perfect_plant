@@ -27,6 +27,8 @@ const images = [
   "zz_plant.jpg",
 ];
 
+
+
 // function fetchPlants() {
 
 //         fetch(`${BASE_URL}/pick_the_perfect_plants`)
@@ -141,12 +143,14 @@ function bestPlantForm() {
     
 }
 
+
+
 function myFunction(question) {
     document.getElementById("result").value = question;
 }
 
 function plantFormSubmission() {
-  if (event.target.matches("button[type=submit]")) {
+  //if (event.target.matches("button[type=submit]")) {
       
     event.preventDefault();
     
@@ -156,12 +160,12 @@ function plantFormSubmission() {
      }"/>`
     
     
+     let currentUser = document.getElementById("delete-bttn");
+     let currentUserId = currentUser.dataset.id;
+     let question_number = currentUserId
+     let question = document.getElementById("result").value 
     
     
-    let currentUser = document.getElementById("delete-bttn");
-    let currentUserId = currentUser.getAttribute("data-id").value;
-    let question_number = currentUserId
-    let question = document.getElementById("result").value 
     
 
     //let questionNumberTwo = document.querySelector('input[name="question2"]:checked').value;
@@ -169,9 +173,11 @@ function plantFormSubmission() {
     //let questionNumberFour = document.querySelector('input[name="question4"]:checked').value;
     //let questionNumberFive = document.querySelector('input[name="question5"]:checked').value;
     //let question = document.querySelector('input[name="question1"]:checked').value;
+    
     let pick_the_perfect_plant = { 
             question_number: question_number,
             question: question,
+            user_id: currentUserId
             //user_id: currentUserId
           };
      
@@ -193,15 +199,25 @@ function plantFormSubmission() {
                     
   })
                     
-  }
+  //}
 }
 
  function historyFormSubmission() {
      let qDiv = document.getElementById("history-container")
+     let user = document.getElementById("delete-bttn");
+     let userId = user.dataset.id;
+     let questionAnswer = document.getElementById("result").value 
+    
+     fetch(`${BASE_URL}/users/${userId}`) 
+     .then(response => response.json())
+     .then(response => {
+       return console.log(response)
+     })
 
+  
      qDiv.innerHTML += 
      `
-     <li>User: ${this.id} | Question: ${this.question}</li>
+     <li>User: ${this} | Question: ${this.question}</li>
      
      
      `
