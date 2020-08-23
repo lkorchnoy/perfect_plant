@@ -27,24 +27,6 @@ const images = [
   "zz_plant.jpg",
 ];
 
-
-
-// function fetchPlants() {
-
-//         fetch(`${BASE_URL}/pick_the_perfect_plants`)
-        
-//          .then((resp) => resp.json())
-//          .then((pick_the_perfect_plants) => {
-            
-//          for(const pick_the_perfect_plant in pick_the_perfect_plants) {
-             
-//              let p = new PickThePerfectPlant(pick_the_perfect_plant.id, pick_the_perfect_plant.question_number, pick_the_perfect_plant.question);
-//              p.renderPickThePerfectPlant();
-//         }
-//          });
-         
-//  }
-
 function fetchUsers() {
   fetch(`${BASE_URL}/users`)
     .then((resp) => resp.json())
@@ -165,21 +147,12 @@ function plantFormSubmission() {
      let question_number = currentUserId
      let question = document.getElementById("result").value 
     
-    
-    
-
-    //let questionNumberTwo = document.querySelector('input[name="question2"]:checked').value;
-    //let questionNumberThree = document.querySelector('input[name="question3"]:checked').value;
-    //let questionNumberFour = document.querySelector('input[name="question4"]:checked').value;
-    //let questionNumberFive = document.querySelector('input[name="question5"]:checked').value;
-    //let question = document.querySelector('input[name="question1"]:checked').value;
-    
     let pick_the_perfect_plant = { 
             question_number: question_number,
             question: question,
             user_id: currentUserId
             
-            //user_id: currentUserId
+            
           };
      
 
