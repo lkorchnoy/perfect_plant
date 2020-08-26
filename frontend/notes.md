@@ -13,3 +13,17 @@
 //          });
          
 //  }
+
+`
+qDiv.innerHTML += 
+
+<li>Name: ${response.name} - Question: ${response.pick_the_perfect_plants[0].question}</li> 
+  
+`
+<strong>Well done!</strong> You successfully completed this test!
+
+ `
+qDiv.innerHTML += 
+<li>Name: ${response.name} - Question: ${response.pick_the_perfect_plants[0].question}</li>
+  
+`

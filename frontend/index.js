@@ -178,22 +178,25 @@ function plantFormSubmission() {
 
  function historyFormSubmission() {
      let qDiv = document.getElementById("history-container")
-     let user = document.getElementById("delete-bttn");
-     let userId = user.dataset.id;
-     let questionAnswer = document.getElementById("result").value 
-
-    fetch(`${BASE_URL}/users/${userId}`) 
+     
+    fetch(`${BASE_URL}/users`) 
      
      .then(response => response.json())
      .then(response => {
-      qDiv.innerHTML += 
-      `
-      <li>Name: ${response.name} | Question: ${response.pick_the_perfect_plants[0].question}</li>
-      `
-     })
+       response.forEach(response => 
 
-  
-  }
+        qDiv.innerHTML += 
+        
+ `
+ 
+ <li>Name: ${response.name} - Question: ${response.pick_the_perfect_plants[0].question}</li>
+   
+ `
+       
+       )
+      
+     })
+    }
 
 
 function createForm() {
