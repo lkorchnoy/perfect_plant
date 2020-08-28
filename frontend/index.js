@@ -28,15 +28,21 @@ const images = [
 ];
 
 function fetchUsers() {
+  let users = document.getElementById("users-container")
+  users.innerHTML = ""
   fetch(`${BASE_URL}/users`)
     .then((resp) => resp.json())
     .then((users) => {
       for (const user of users) {
         let u = new User(user.id, user.name, user.username, user.email);
         u.renderUser();
+       
       }
+      
     });
 }
+
+
 
 
 function bestPlantForm() {
@@ -113,15 +119,18 @@ function bestPlantForm() {
         Your favorite answer: <span><input type="text" id="result" style='width:100%'></span>
         <button type="submit" id="submit">Submit</button>
         <button type="button" id="click" name="history">History Button</button>
-        
+        <button type="button" id="filter">Filter</button>
         </form>
         
         `;
-    let historyButton = document.getElementById("click");
+    
 
     let submitButton = document.getElementById("submit");
+    let historyButton = document.getElementById("click");
+    let filterButton = document.getElementById("filter");
     submitButton.addEventListener("click", plantFormSubmission);
     historyButton.addEventListener("click", historyFormSubmission);
+    filterButton.addEventListener("click", filterFunction);
     
 }
 
@@ -129,7 +138,30 @@ function bestPlantForm() {
 
 function myFunction(question) {
     document.getElementById("result").value = question;
+    
 }
+
+function filterFunction(){
+
+  fetch(`${BASE_URL}/users`)
+  .then(response => response.json())
+  .then(response => {
+    response.filter(response => {
+      let name = response.name 
+      let answer = response.pick_the_perfect_plants[0].question
+      console.log(name, answer)
+      
+    
+    
+    
+  
+    })
+ 
+    })
+}
+  
+
+
 
 function plantFormSubmission() {
   //if (event.target.matches("button[type=submit]")) {
@@ -175,29 +207,24 @@ function plantFormSubmission() {
                     
   //}
 }
+  
+function historyFormSubmission() {	 
+  let qDiv = document.getElementById("history-container")	     
+  let user = document.getElementById("delete-bttn");	
+  let userId = user.dataset.id;	     
+  let questionAnswer = document.getElementById("result").value 	
 
- function historyFormSubmission() {
-     let qDiv = document.getElementById("history-container")
-     
-    fetch(`${BASE_URL}/users`) 
-     
-     .then(response => response.json())
-     .then(response => {
-       response.forEach(response => 
+ fetch(`${BASE_URL}/users/${userId}`) 	
 
-        qDiv.innerHTML += 
-        
- `
- 
- <li>Name: ${response.name} - Question: ${response.pick_the_perfect_plants[0].question}</li>
-   
- `
-       
-       )
-      
-     })
-    }
 
+  .then(response => response.json())	     
+  .then(response => {	     
+   qDiv.innerHTML += 	       
+   `	
+   <li>Name: ${response.name} | Question: ${response.pick_the_perfect_plants[0].question}</li>	
+   `	
+  })
+}	
 
 function createForm() {
   let usersForm = document.getElementById("users-form");
@@ -208,11 +235,16 @@ function createForm() {
             Username: <input type="text" id="username"> <br>
             Email: <input type="text" id="email"> <br>
             <input type="submit" value="Submit">
+            
             </form>
+            
+            <button onclick="fetchUsers()">Display</button>
             `;
-  
+            
   usersForm.addEventListener("submit", userFormSubmission);
 }
+
+  
 
 function userFormSubmission() {
   event.preventDefault();
@@ -240,7 +272,6 @@ function userFormSubmission() {
       u.renderUser();
     });
 }
-
 function deleteUser() {
   let userId = parseInt(event.target.dataset.id);
 
@@ -249,3 +280,4 @@ function deleteUser() {
   });
   this.location.reload();
 }
+

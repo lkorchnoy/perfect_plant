@@ -3,6 +3,7 @@ class PickThePerfectPlantsController < ApplicationController
 
   # GET /pick_the_perfect_plants
   def index
+     
     @pick_the_perfect_plants = PickThePerfectPlant.all
     render json: @pick_the_perfect_plants.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at])
     #serialized_data = PickThePerfectPlantSerializer.new(@pick_the_perfect_plants).serialized_json 

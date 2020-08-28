@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     #serialized_data = UserSerializer.new(@users).serialized_json 
     #render json: serialized_data
     render json: @users, include: [:pick_the_perfect_plants]
+    
+    
   end
 
   # GET /users/1

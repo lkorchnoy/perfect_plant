@@ -4,6 +4,7 @@ class User {
         this.name = name;
         this.username = username;
         this.email = email;
+        User.allUsers.push(this)
     }
 
     renderUser() {
@@ -21,4 +22,6 @@ class User {
         `
     
     }
+
+    static allUsers = []
 }
